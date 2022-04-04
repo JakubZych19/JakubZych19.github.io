@@ -1,0 +1,151 @@
+<!Doctype html>
+<html lang="pl">
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="strona,PAI,szkoła">
+    <meta name="description" content="strona szkolna na PAI">
+    <meta name="author" content="Zych Jakub" />
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script  src ="js.js" type="text/javascript">
+    </script>
+    <style>
+        #flex {
+    display:flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content: center;  
+    margin: auto;
+}
+#flex2 {
+display: flex;
+flex-direction: row;
+}
+#menu {
+    width:1500px;
+    height:50px;
+    background-color: azure;
+}
+#header {
+    width: 1500px;
+    height:200px;
+    background-color: antiquewhite;
+    border-top-left-radius: 1%;
+    border-top-right-radius: 1%;
+}
+#body {
+    width: 1100px;
+    height: 800px;
+    background-color: rgb(138, 129, 119);
+    border-radius: 0%;
+}
+#nav {
+width: 400px;
+height: 800px;
+background-color: gray;
+}
+#navflex {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+#footer {
+    width: 1500px;
+    height: 100px;
+    background-color: blanchedalmond;
+    text-align: center;
+    
+}
+
+
+#footer:hover  {
+    background-color: blue;
+    size: 20px;
+  transition: background-color 7s;
+  text-align: center;
+}
+#footer p:hover {
+    color:lightpink;
+    transition:   2s;
+    font-size: 30px;
+    font-weight: 900;
+    
+}
+ #ha {
+    position: relative;
+    animation-name: zmiana;
+    animation-delay: -3s;
+    animation-duration: 8s;
+    
+ }
+ @keyframes zmiana {
+    0%   {color:crimson; left:0px; top:0px;}
+    25%  {color:rgb(8, 16, 245); left:150px; top:0px;}
+    50%  {color:rgb(0, 255, 98); left:150px; top:200px;}
+    75%  {color:rgb(128, 0, 79); left:0px; top:100px;}
+    100% {color:red; left:0px; top:0px;}
+  }
+ 
+    </style>
+    <script>
+    function czas()
+	{
+		let a = new Date();
+		let dzien = a.getDate();
+		let miesiac = a.getMonth()+1;
+		let rok = a.getFullYear();
+		
+		let godzina = a.getHours();
+        if (godzina<10) godzina = "0"+godzina;
+		let minuta = a.getMinutes();
+		if (minuta<10) minuta = "0"+minuta;
+		let sekunda = a.getSeconds();
+		if (sekunda<10) sekunda = "0"+sekunda;
+		document.getElementById("wyniczek").innerHTML = "Zegar: \n"
+		 +dzien+"."+miesiac+"."+rok+" | "+godzina+":"+minuta+":"+sekunda;
+		 
+		 setTimeout("czas()",1000);
+	}
+function funkcja() {
+var okno = prompt("Witaj, proszę podaj swoje imię","Jakub")
+if (okno !== null) {
+alert("Witaj \n" +okno+ "");
+document.getElementById("funkcyjka").innerHTML="Witaj \n" +okno+ "";
+}  
+ if (okno == null) {
+alert("Błąd!"); 
+}
+}
+
+        </script>
+</head>
+<body onload="czas()">
+    <div id="flex">
+
+    <div id="header">
+        <h1 id="ha" style="color:blueviolet; font-weight: 1100; font-size: 50px; text-align: center;">Strona poświęcona kotom.</h1>
+    </div>
+    <div id="flex2">
+    <div id="body">
+        
+        
+        <p style="font-size: 25px; font-weight: 700; color:dimgrey"> Zapraszam na stronę!</p>
+        <img src="kot.png" width="700" height="500"> 
+        <video width="320" height="500" controls muted>
+            <source src="kotek.mp4" type="video/mp4">
+          </video>
+    
+    <p id="wyniczek"></p>
+    </div>
+    <div id="nav">
+        <div id="navflex">
+        <div id="guzik"><button onClick="funkcja()" style="margin-top: 50px;" ><p>Kliknij mnie, aby uruchomić funkcję</p></button></div>
+        <p id="funkcyjka"></p>
+    </div>
+    </div>
+</div>
+    <div id="footer">
+        <p> Stronę wykonał: Jakub Zych</p>
+    </div>
+</div>
+</body>
+</html>
